@@ -1,8 +1,18 @@
-const mvc = require("mvc.js").init(module.id),
-      models = mvc.models(module.id);
+const controller = require("mvc/controller.js").bind(module.id);
+models = require("mvc/list.js").models;
 
-exports.site = mvc.controller({
+module.exports = {
 	"index": function() {
 		this.render();
+	},
+	"about": function() {
+		var exec = {};
+		this.render({exec:exec});
+	},
+	"darkroom": function() {
+		this.render();
+	},
+	"contact": function() {
+		this.render();
 	}
-});
+};

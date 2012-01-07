@@ -6,10 +6,9 @@ exports.routes=function($)[
 	["*","/robots.txt",this.staticFile,"static/robots.txt"],
 	["*","/humans.txt",this.staticFile,"static/humans.txt"],
 	["*","/crossdomain.xml",this.staticFile,"static/crossdomain.xml"],
-	["*","/static/css/{file}",this.staticDir,"static/css"],
-	["*","/static/js/{file}",this.staticDir,"static/js"],
-	["*","/static/js/libs/{file}",this.staticDir,"static/js/libs"],
-	["*","/static/img/{file}",this.staticDir,"static/img"],
-	["*","/static/{file}",this.staticDir,"static"],
+	["*","/home",$.site.index],
+	["*","/about",$.site.about],
+	["*","/about/darkroom",$.site.darkroom],
+	["*","/about/contact",$.site.contact],
 	["*","/{controller}/{action}",function(_)$[_.controller][_.action]]
 ]
