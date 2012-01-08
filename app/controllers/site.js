@@ -6,7 +6,7 @@ module.exports = {
 		this.render();
 	},
 	"about": function() {
-		var exec = {};
+		var exec = ["Jeff","Matt","Mark"];
 		this.render({exec:exec});
 	},
 	"darkroom": function() {
