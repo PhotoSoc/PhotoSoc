@@ -2,8 +2,6 @@
 <pre>
 {{=$.get("exec")}}
 </pre>
-{{/*}}
-{{exec.each(function(member) {}}
-{{=member}}
-{{});}}
-{{*/}}
+{{exec.each(function(member) {
+	out += member;
+});}}

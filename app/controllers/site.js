@@ -6,13 +6,13 @@ module.exports = {
 		this.render();
 	},
 	"about": function() {
-		var exec = ["Jeff","Matt","Mark"];
-		this.render({exec:exec});
+		this.render();
 	},
 	"darkroom": function() {
-		this.render();
+		this.render("abc",{});
 	},
 	"contact": function() {
-		this.render();
+		var exec = ["Jeff","Matt","Mark"];
+		this.render({exec:exec});
 	}
 };
