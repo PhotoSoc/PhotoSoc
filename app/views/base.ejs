@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Warwick PhotoSoc{{=($.get("title") ? " &bull; "+$.get("title") : "")}}</title>
+  <title>Warwick PhotoSoc{{=$.get("title") ? " &bull; "+$.get("title") : ""}}</title>
   <meta name="description" content=""/>
   <meta name="author" content=""/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<header>
+<header{{=$.get("banner") ? " style='background-image:url("+$.get("banner")+") !important;'" : ""}}>
   <h1><a href="/home">Warwick PhotoSoc</a></h1>
   <nav>
     <ul>
@@ -38,7 +38,6 @@
   <script defer="defer" src="/js/plugins.js"> </script>
   <script defer="defer" src="/js/script.js"> </script>
   <script src="/js/analytics.js"></script>
-
 
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
