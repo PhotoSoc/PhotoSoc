@@ -1,5 +1,4 @@
-const controller = require("mvc/controller.js").bind(module.id);
-models = require("mvc/list.js").models;
+const models = require("mvc/list.js").models;
 
 module.exports = {
 	"index": function() {

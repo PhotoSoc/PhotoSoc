@@ -17,20 +17,20 @@
 @total-width: 100%;
 
 @font-face {
-    font-family: 'League Gothic';
-    src: url('League_Gothic-webfont.eot');
-    src: url('League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('League_Gothic-webfont.woff') format('woff'),
-         url('League_Gothic-webfont.ttf') format('truetype'),
-         url('League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+		font-family: 'League Gothic';
+		src: url('League_Gothic-webfont.eot');
+		src: url('League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+				 url('League_Gothic-webfont.woff') format('woff'),
+				 url('League_Gothic-webfont.ttf') format('truetype'),
+				 url('League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+		font-weight: normal;
+		font-style: normal;
 
 }
 
 /* =============================================================================
-   HTML5 display definitions
-   ========================================================================== */
+	 HTML5 display definitions
+	 ========================================================================== */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
@@ -38,8 +38,8 @@ audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
 /* =============================================================================
-   Base
-   ========================================================================== */
+	 Base
+	 ========================================================================== */
 
 /*
  * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
@@ -64,8 +64,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
 
 /* =============================================================================
-   Links
-   ========================================================================== */
+	 Links
+	 ========================================================================== */
 
 a { color: #00e; }
 a:visited { color: #551a8b; }
@@ -77,8 +77,8 @@ a:hover, a:active { outline: 0; }
 
 
 /* =============================================================================
-   Typography
-   ========================================================================== */
+	 Typography
+	 ========================================================================== */
 
 abbr[title] { border-bottom: 1px dotted; }
 
@@ -112,8 +112,8 @@ sub { bottom: -0.25em; }
 
 
 /* =============================================================================
-   Lists
-   ========================================================================== */
+	 Lists
+	 ========================================================================== */
 
 ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
@@ -121,8 +121,8 @@ nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0
 
 
 /* =============================================================================
-   Embedded content
-   ========================================================================== */
+	 Embedded content
+	 ========================================================================== */
 
 /*
  * 1. Improve image quality when scaled in IE7: h5bp.com/d
@@ -139,15 +139,15 @@ svg:not(:root) { overflow: hidden; }
 
 
 /* =============================================================================
-   Figures
-   ========================================================================== */
+	 Figures
+	 ========================================================================== */
 
 figure { margin: 0; }
 
 
 /* =============================================================================
-   Forms
-   ========================================================================== */
+	 Forms
+	 ========================================================================== */
 
 form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
@@ -217,93 +217,101 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 
 
 /* =============================================================================
-   Tables
-   ========================================================================== */
+	 Tables
+	 ========================================================================== */
 
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author: 
-   ========================================================================== */
+	 Author: 
+	 ========================================================================== */
 .box-sizing(@sizing) {
-  box-sizing: @sizing;
-  -moz-box-sizing: @sizing;
-  -webkit-box-sizing: @sizing;
-  -ms-box-sizing: @sizing;
+	box-sizing: @sizing;
+	-moz-box-sizing: @sizing;
+	-webkit-box-sizing: @sizing;
+	-ms-box-sizing: @sizing;
 }
 h1 {
-  font-family: "League Gothic";
-  font-weight: normal;
-  font-size: 2em;
-  margin: 0px;
+	font-family: "League Gothic";
+	font-weight: normal;
+	font-size: 2em;
+	margin: 0px;
 
-  a {
-    color: black;
-    text-decoration: none;
-  }
+	a {
+		color: black;
+		text-decoration: none;
+	}
 }
 .no-rgba body > header {
-  h1{
-    background: white;
-  }
-  nav {
-    border-top: 2px solid black;
-  }
+	h1{
+		background: white;
+	}
+	nav {
+		border-top: 2px solid black;
+	}
 }
 body > header {
-  height: 80px;
-  background: url(http://farm7.static.flickr.com/6153/6177398215_81ca8469dc.jpg) no-repeat center center;
-  background-size: 100%;
-  h1{
-    .columnp(12);
-    .box-sizing(border-box);
-    background: rgba(255,255,255,0.8) url(https://s3.amazonaws.com/photosoc/img/rob.png) no-repeat 5px top !important;
-    background-size: 69px 50px !important;
-    color: black;
-    padding-right: 5px;
-    font: 3.5em/50px "League Gothic";
-    text-align: right;
-    a {
-      color: black;
-      text-decoration: none;
-    }
-  }
-  nav {
-    border-top: 0px none;
-    background-color: rgba(255,255,255,0.3);
-    .columnp(12);
-    ul {
-      .row(6);
-      li {
-        .column(1,6);
-        text-align: center;
-        font: 1.5em/30px "League Gothic";
-        a {
-          color: black;
-          text-decoration: none;
-        }
-      }
-    }
-  }
+	height: 80px;
+	background: url(/img/top.jpg) no-repeat center center;
+	background-size: 100%;
+	h1{
+		.columnp(12);
+		.box-sizing(border-box);
+		background: rgba(255,255,255,0.8) url(/img/rob.png) no-repeat 5px top !important;
+		background-size: 69px 50px !important;
+		color: black;
+		padding-right: 5px;
+		font: 3.5em/50px "League Gothic";
+		text-align: right;
+		a {
+			color: black;
+			text-decoration: none;
+			&:visited {
+				color: black;
+			}
+			&:hover { color: #06e; }
+		}
+	}
+	nav {
+		border-top: 0px none;
+		background-color: rgba(255,255,255,0.3);
+		.columnp(12);
+		ul {
+			.row(6);
+			li {
+				.column(1,6);
+				text-align: center;
+				font: 1.5em/30px "League Gothic";
+				a {
+					color: black;
+					text-decoration: none;
+					&:visited {
+						color: black;
+					}
+					&:hover { color: #06e; }
+				}
+			}
+		}
+	}
 }
 section[role="main"] {
-  article {
-    .column(12);
-  }
-  aside {
-    .column(12);
-  }
+	article {
+		.column(12);
+	}
+	aside {
+		.column(12);
+	}
 }
 body > * {
-  max-width: 1140px;
-  margin: 0px auto;
+	max-width: 1140px;
+	margin: 0px auto;
 }
 
 /* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
+	 Please define your styles before this section.
+	 ========================================================================== */
 
 /* For image replacement */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
@@ -329,143 +337,163 @@ body > * {
 
 
 /* ==|== media queries ======================================================
-   PLACEHOLDER Media Queries for Responsive Design.
-   These override the primary ('mobile first') styles
-   Modify as content requires.
-   ========================================================================== */
+	 PLACEHOLDER Media Queries for Responsive Design.
+	 These override the primary ('mobile first') styles
+	 Modify as content requires.
+	 ========================================================================== */
 
 @media only screen and (min-width: 480px) {
-  /* Style adjustments for viewports 480px and over go here */
-  body > header {
-    height: 240px;
-    background: url(http://farm7.static.flickr.com/6153/6177398215_81ca8469dc_z.jpg) no-repeat center center;
-    background-size: 100%;
-    h1 {
-      .columnp(12);
-      .box-sizing(border-box);
-      padding-right: 5px;
-      color: black;
-      height: 80px;
-      background: white url(https://s3.amazonaws.com/photosoc/img/rob.png) no-repeat 5px top !important;
-      background-size: 110px 80px !important;
-      text-align: right;
-      font: 5.8em/80px "League Gothic";
-      
-      a {
-        color: black;
-        text-decoration: none;
-      }
-    }
-    nav {
-      .columnp(12);
-      height: 36px;
-      border-top: 3px black solid;
-      background: white;
-      ul {
-        .row(6);
-        box-sizing: padding-box;
-        li {
-          .column(1,6);
-          text-align: center;
-          font: 2.5em/36px "League Gothic";
-          &.this {
-            border-left: 2px black solid;
-          }
-          a {
-            color: black;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-  .rgba body > header nav {
-    border-top: 0px none;
-    background: rgba(255,255,255,0.6);
-  }
-  section[role="main"] {
-    article {
-      .column(9);
-    }
-    aside {
-      .column(3);
-    }
-  }
+	/* Style adjustments for viewports 480px and over go here */
+	body > header {
+		height: 240px;
+		background: url(/img/top.jpg) no-repeat center center;
+		background-size: 100%;
+		h1 {
+			.columnp(12);
+			.box-sizing(border-box);
+			padding-right: 5px;
+			color: black;
+			height: 80px;
+			background: white url(/img/rob.png) no-repeat 5px top !important;
+			background-size: 110px 80px !important;
+			text-align: right;
+			font: 5.8em/80px "League Gothic";
+			
+			a {
+				color: black;
+				text-decoration: none;
+
+				&:visited {
+					color: black;
+				}
+				&:hover { color: #06e; }
+			}
+		}
+		nav {
+			.columnp(12);
+			height: 36px;
+			border-top: 3px black solid;
+			background: white;
+			ul {
+				.row(6);
+				box-sizing: padding-box;
+				li {
+					.column(1,6);
+					text-align: center;
+					font: 2.5em/36px "League Gothic";
+					&.this {
+						border-left: 2px black solid;
+					}
+					a {
+						color: black;
+						text-decoration: none;
+
+						&:visited {
+							color: black;
+						}
+						&:hover { color: #06e; }
+					}
+				}
+			}
+		}
+	}
+	.rgba body > header nav {
+		border-top: 0px none;
+		background: rgba(255,255,255,0.6);
+	}
+	section[role="main"] {
+		article {
+			.column(9);
+		}
+		aside {
+			.column(3);
+		}
+	}
 }
 
 @media only screen and (min-width: 768px) {
-  body > header {
-    height: 340px;
-    background: url(http://farm7.static.flickr.com/6153/6177398215_81ca8469dc_b.jpg) no-repeat center center !important;
-    background-size: 100% !important;
-    h1 {
-      .columnp(8);
-      color: black;
-      height: 80px;
-      background: url(https://s3.amazonaws.com/photosoc/img/rob.png) no-repeat 5px top !important;
-      background-color: white !important;
-      background-size: 110px 80px !important;
-      text-indent: 115px;
-      text-align: left !important;
-      font: 5.8em/80px "League Gothic";
-      a {
-        color: black;
-        text-decoration: none;
-      }
-    }
-    nav {
-      .columnp(4);
-      position: relative;
-      height: 80px;
-      background: white !important;
-      ul {
-        .row(3);
-        position: absolute;
-        bottom: 0.75em;
-        box-sizing: padding-box;
-        li {
-          .column(1,3);
-          text-align: left;
-          font: 2.5em/1em "League Gothic";
-          &.this {
-            border-left: 2px black solid;
-          }
-          a {
-            color: black;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-  section[role="main"] {
-    article {
-      .column(8);
-    }
-    aside {
-      .column(2);
-    }
-  }
+	body > header {
+		height: 340px;
+		background: url(/img/top.jpg) no-repeat center center !important;
+		background-size: 100% !important;
+		h1 {
+			.columnp(8);
+			color: black;
+			height: 80px;
+			background: url(/img/rob.png) no-repeat 5px top !important;
+			background-color: white !important;
+			background-size: 110px 80px !important;
+			text-indent: 115px;
+			text-align: left !important;
+			font: 5.8em/80px "League Gothic";
+			a {
+				color: black;
+				text-decoration: none;
+				
+				&:visited {
+					color: black;
+				}
+				&:hover { color: #06e; }
+			}
+		}
+		nav {
+			.columnp(4);
+			position: relative;
+			height: 80px;
+			background: white !important;
+			ul {
+				.row(3);
+				position: absolute;
+				bottom: 0.75em;
+				box-sizing: padding-box;
+				li {
+					.column(1,3);
+					text-align: left;
+					font: 2.5em/1em "League Gothic";
+					&.this {
+						border-left: 2px black solid;
+					}
+					a {
+						color: black;
+						text-decoration: none;
+
+						&:visited {
+							color: black;
+						}
+						&:hover { color: #06e; }
+					}
+				}
+			}
+		}
+	}
+	section[role="main"] {
+		article {
+			.column(8);
+		}
+		aside {
+			.column(2);
+		}
+	}
 }
 
 
 
 /* ==|== print styles =======================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
+	 Print styles.
+	 Inlined to avoid required HTTP connection: h5bp.com/r
+	 ========================================================================== */
  
 @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+	* { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+	a, a:visited { text-decoration: underline; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; } /* h5bp.com/t */
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	@page { margin: 0.5cm; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3 { page-break-after: avoid; }
 }
