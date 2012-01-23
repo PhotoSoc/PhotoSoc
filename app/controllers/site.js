@@ -1,4 +1,6 @@
-const models = require("mvc/list.js").models;
+const list = require("mvc/list.js"),
+models = list.models,
+controllers = list.controllers;
 
 module.exports = {
 	"index": function() {
@@ -6,9 +8,6 @@ module.exports = {
 	},
 	"about": function() {
 		this.render();
-	},
-	"darkroom": function() {
-		this.render("abc",{});
 	},
 	"contact": function() {
 		var exec = ["Jeff","Matt","Mark"];
