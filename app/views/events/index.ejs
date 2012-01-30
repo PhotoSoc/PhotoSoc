@@ -1,8 +1,19 @@
 {{$.extend("base");}}
-<article>
+<article id="list">
 <h1>Events</h1>
-<img src="/s3/img/rob_original.png">
+
 </article>
 <aside>
 <h1>Stuff</h1>
 </aside>
+<script>
+$.getJSON("/events/list",function(data) {
+	var items = "";
+	data.forEach(function(ev) {
+		items += "<li>"+ev.name+"</li>";
+	});
+	$('<ul/>', {
+		html: items
+	}).appendTo('#list');
+});
+</script>
