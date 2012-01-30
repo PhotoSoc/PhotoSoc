@@ -5,9 +5,5 @@ controllers = list.controllers;
 module.exports = {
 	"index": function() {
 		this.render();
-	},
-	"contact": function() {
-		var exec = ["Jeff","Matt","Mark"];
-		this.render({exec:exec});
 	}
 };
