@@ -1,0 +1,16 @@
+{{$.extend("base");}}
+<script>
+$(document).ready(function() {
+	$.getJSON("{{=$.route("events.list","GET",{id:id})}}",function(data) {
+		$('#event').append($("<pre>",{html:JSON.stringify(data)}));
+		$('#event h1').html(data.name);
+	});
+});
+</script>
+<article id="event">
+<h1><img src="/img/load.gif" class="load"/></h1>
+{{=$.route("events.list","GET",{id:id})}}
+</article>
+<aside>
+<h1>Stuff</h1>
+</aside>
