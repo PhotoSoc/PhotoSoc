@@ -1,20 +1,30 @@
 {{$.extend("base");}}
-<article id="list">
+<script>
+$(document).ready(function() {
+	$.getJSON("{{=$.route("events.list")}}",function(events) {
+		var future = "", past = "",
+		now = new Date;
+		events.data.forEach(function(ev) {
+			var start = new Date(ev.start_time);
+			if(start > now)
+				future += "<li><a href='/events/"+ev.id+"'>"+ev.name+"</a></li>";
+			else
+				past += "<li><a href='/events/"+ev.id+"'>"+ev.name+"</a></li>";
+		});
+		$('<ul/>', {
+			html: future
+		}).appendTo('#future');
+		$('<ul/>', {
+			html: past
+		}).appendTo('#past');
+		$('.load').hide();
+	});
+});
+</script>
+<article id="future">
 <h1>Events<img src="/img/load.gif" class="load"/></h1>
 
 </article>
-<aside>
-<h1>Stuff</h1>
+<aside id="past">
+<h1>Stuff we've done in the past</h1>
 </aside>
-<script>
-$.getJSON("/events/list",function(data) {
-	var items = "";
-	data.forEach(function(ev) {
-		items += "<li>"+ev.name+"</li>";
-	});
-	$('<ul/>', {
-		html: items
-	}).appendTo('#list');
-	$('.load').hide();
-});
-</script>

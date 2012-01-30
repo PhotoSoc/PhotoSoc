@@ -9,7 +9,7 @@ module.exports = {
 		if("id" in params) {
 			this.render("view",{id:params.id});
 		} else {
-			this.render();
+			this.render(params);
 		}
 	},
 	"list": function(params) {
@@ -30,8 +30,8 @@ module.exports = {
 				chunk.copy(buf,off);
 				off += chunk.length;
 			}).on("end",function() {
-				var events = JSON.parse(buf.toString("UTF-8"));
-				action.renderJSON(events.data);
+				var event = JSON.parse(buf.toString("UTF-8"));
+				action.renderJSON(event);
 			});
 		});
 	}
