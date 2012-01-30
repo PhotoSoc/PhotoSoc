@@ -23,12 +23,12 @@
   <h1><a href="/home">Warwick PhotoSoc</a></h1>
   <nav>
     <ul>
-      <li><a href="/about">About</a></li>
-      <li><a href="/events">Events</a></li>
-      <li><a href="/photos">Photos</a></li>
-      <li><a href="/gear">Gear</a></li>
-      <li><a href="/news">News</a></li>
-      <li><a href="/about/contact">Contact</a></li>
+      <li><a href="{{=$.route("site.about")}}">About</a></li>
+      <li><a href="{{=$.route("events.index")}}">Events</a></li>
+      <li><a href="{{=$.route("photos.index")}}">Photos</a></li>
+      <li><a href="{{=$.route("gear.index")}}">Gear</a></li>
+      <li><a href="{{=$.route("news.index")}}">News</a></li>
+      <li><a href="{{=$.route("site.contact")}}">Contact</a></li>
     </ul>
   </nav>
 </header>
