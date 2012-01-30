@@ -21,7 +21,7 @@
 
 <body>
 <header{{=$.get("banner") ? " style='background-image:url("+$.get("banner")+") !important;'" : ""}}>
-  <h1><a href="/home">Warwick PhotoSoc</a></h1>
+  <h1><a href="{{=$.route("site.index")}}">Warwick PhotoSoc</a></h1>
   <nav>
     <ul>
       <li><a href="{{=$.route("site.about")}}">About</a></li>
