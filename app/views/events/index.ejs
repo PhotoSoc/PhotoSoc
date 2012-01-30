@@ -1,6 +1,6 @@
 {{$.extend("base");}}
 <article id="list">
-<h1>Events</h1>
+<h1>Events<img src="/img/load.gif" class="load"/></h1>
 
 </article>
 <aside>
@@ -15,5 +15,6 @@ $.getJSON("/events/list",function(data) {
 	$('<ul/>', {
 		html: items
 	}).appendTo('#list');
+	$('.load').hide();
 });
 </script>

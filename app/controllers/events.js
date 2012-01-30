@@ -5,16 +5,24 @@ controllers = list.controllers;
 const https = require("https");
 
 module.exports = {
-	"index": function() {
-		this.render();
+	"index": function(params) {
+		if("id" in params) {
+			this.render("view",{id:params.id});
+		} else {
+			this.render();
+		}
 	},
-	"list": function() {
-		var action = this, start = new Date;
+	"list": function(params) {
+		var action = this, start = new Date, path,
+		token = "?access_token=AAACPGOnKZAyMBAGSZCAYQRXXLe7dhxysHEofmZBNqeuNpXcjg5ZCGIpaleB5xBfKWFca7Djj6ZCcK9s3bvmKhabzZBicvatoUZD";
+		if("id" in params) {
+			path = "/"+params.id;
+		} else {
+			path = "/warwickphotosoc/events";
+		}
 		https.get({
 			host: "graph.facebook.com",
-			path: "/warwickphotosoc/events\
-?access_token=AAACPGOnKZAyMBAGSZCAYQRXXLe7dhxysHEofmZBNqeuNpXcjg5ZCGIpaleB5xBfKWFca7Djj6ZCcK9s3bvmKhabzZBicvatoUZD\
-&since=0"
+			path: path+token
 		}, function(res) {
 			var buf = new Buffer(parseInt(res.headers["content-length"])),
 			off=0;
