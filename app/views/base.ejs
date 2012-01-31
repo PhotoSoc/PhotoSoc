@@ -43,8 +43,32 @@
   <![endif]-->
   
   <script src="/js/libs/jquery-1.6.2.min.js"> </script>
+  <script src="/js/libs/jquery.history-40489d1.js"> </script>
+  <script src="/js/libs/sugar-1.2.1.min.js"> </script>
   <script src="/js/plugins.js"> </script>
   <script src="/js/script.js"> </script>
   <script src="/js/analytics.js"></script>
+  <script>
+  $(document).ready(function(){
+    if ( !History.enabled ) {
+        return false;
+    }
+    History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+        var State = History.getState(); // Note: We are using History.getState() instead of event.state
+        var path = State.data.page;
+        console.log(path);
+        $.ajax(path,{
+          type: "TRACE",
+          onsuccess: function(trans) {
+            console.log(trans);
+          }
+        })
+    });
+    $('a').click(function(ev){
+      ev.preventDefault();
+      History.pushState({page:this.href},null,this.href);
+    })
+  }(window));
+  </script>
 </body>
 </html>
