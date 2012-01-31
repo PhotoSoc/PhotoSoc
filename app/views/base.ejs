@@ -49,26 +49,38 @@
   <script src="/js/script.js"> </script>
   <script src="/js/analytics.js"></script>
   <script>
-  $(document).ready(function(){
-    if ( !History.enabled ) {
-        return false;
+  console.log(document.domain)
+  var path = "home?ajax";
+  $.ajax({
+    url:path,
+    type: "TRACE",
+    error: function() {
+      console.log(arguments);
+    },
+    success: function() {
+      console.log(arguments);
     }
+  });
+  $(document).ready(function(){
+    if(!History.enabled) {
+      return false;
+    }
+
     History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-        var State = History.getState(); // Note: We are using History.getState() instead of event.state
-        var path = State.data.page;
-        console.log(path);
-        $.ajax(path,{
-          type: "TRACE",
-          onsuccess: function(trans) {
-            console.log(trans);
-          }
-        })
+      var State = History.getState(); // Note: We are using History.getState() instead of event.state
+      var path = State.data.page;
+      $.ajax(path,{type: "TRACE"})
+       .done(function(trans) {
+          console.log(trans);
+        });
     });
     $('a').click(function(ev){
       ev.preventDefault();
       History.pushState({page:this.href},null,this.href);
+      var path = "/"+this.href.split("/").slice("3").join("/");
+      
     })
-  }(window));
+  });
   </script>
 </body>
 </html>
