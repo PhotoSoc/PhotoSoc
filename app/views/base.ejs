@@ -49,11 +49,10 @@
   <script src="/js/script.js"> </script>
   <script src="/js/analytics.js"></script>
   <script>
-  console.log(document.domain)
-  var path = "home?ajax";
+  var path = "http://localhost:8001/home?ajax";
   $.ajax({
-    url:path,
-    type: "TRACE",
+    url:"/base",
+    type: "options",
     error: function() {
       console.log(arguments);
     },
