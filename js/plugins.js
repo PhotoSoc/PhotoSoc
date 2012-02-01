@@ -66,8 +66,11 @@ function renderer(path,args,layout) {
 		try {
 			comp = Tmpl.compile(data);
 		} catch(e) {
-			console.log("compilation error", e.stack);
-			that.emit("error",e);
+			that.emit("error",e,{
+				path:path,
+				status:501,
+				statusText:"compilation error"
+			});
 			return;
 		}
 		try{
@@ -91,8 +94,11 @@ function renderer(path,args,layout) {
 				})
 			);
 		} catch(e) {
-			console.log("runtime error", e.stack);
-			that.emit("error",e);
+			that.emit("error",e,{
+				path:path,
+				status:501,
+				statusText:"runtime error"
+			});
 			return;
 		}
 		if(old != path) {
@@ -104,8 +110,9 @@ function renderer(path,args,layout) {
 		} else {
 			that.emit("render",output);
 		}
-	}).fail(function(xhr,status,err){
-		that.emit("error",e);
+	}).fail(function(xhr,status,e){
+		xhr.path = "/"+path.split("/").slice(3).join("/");
+		that.emit("error",e,xhr);
 	});
 	
 	return that;

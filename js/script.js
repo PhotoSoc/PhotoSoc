@@ -13,10 +13,26 @@ $(document).ready(function(){
 		var path = State.data.page;
 		
 		renderer(path,{},false).on("render",function(out,args){
+			$('body > header')
+			.css("background-image","url(/img/top.jpg) !important")
+			.css("background-position-y","center !important");
+
 			$('title').html("Warwick PhotoSoc"+("title" in args ? " &bull; "+args.title : ""));
 			$('section[role="main"]').html(out);
-		}).on("error",function(e){
-			console.log(e);
+		}).on("error",function(e,xhr){
+			renderer("/"+xhr.status,xhr,"")
+			.on("render",function(out,args){
+				if("banner" in args) {
+					$('body > header')
+					.css("background-image","url("+args.banner+") !important")
+					.css("background-position-y","25% !important");
+				}
+				$('title').html("Warwick PhotoSoc"+("title" in args ? " &bull; "+args.title : ""));
+				$('section[role="main"]').html(out);
+
+			}).on("error",function(e,xhr) {
+				throw new Error("WE'RE DOOMED!");
+			});
 		});
 	});
 	$('a').click(function(ev){
