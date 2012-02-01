@@ -45,41 +45,9 @@
   <script src="/js/libs/jquery-1.6.2.min.js"> </script>
   <script src="/js/libs/jquery.history-40489d1.js"> </script>
   <script src="/js/libs/sugar-1.2.1.min.js"> </script>
+  <script src="/js/libs/tmpl.js"> </script>
   <script src="/js/plugins.js"> </script>
   <script src="/js/script.js"> </script>
   <script src="/js/analytics.js"></script>
-  <script>
-  var path = "http://localhost:8001/home?ajax";
-  $.ajax({
-    url:"/base",
-    type: "options",
-    error: function() {
-      console.log(arguments);
-    },
-    success: function() {
-      console.log(arguments);
-    }
-  });
-  $(document).ready(function(){
-    if(!History.enabled) {
-      return false;
-    }
-
-    History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-      var State = History.getState(); // Note: We are using History.getState() instead of event.state
-      var path = State.data.page;
-      $.ajax(path,{type: "TRACE"})
-       .done(function(trans) {
-          console.log(trans);
-        });
-    });
-    $('a').click(function(ev){
-      ev.preventDefault();
-      History.pushState({page:this.href},null,this.href);
-      var path = "/"+this.href.split("/").slice("3").join("/");
-      
-    })
-  });
-  </script>
 </body>
 </html>
