@@ -16,7 +16,6 @@ $(document).ready(function(){
 			$('body > header')
 			.css("background-image","url(/img/top.jpg) !important")
 			.css("background-position-y","center !important");
-
 			$('title').html("Warwick PhotoSoc"+("title" in args ? " &bull; "+args.title : ""));
 			$('section[role="main"]').html(out);
 		}).on("error",function(e,xhr){
@@ -35,8 +34,11 @@ $(document).ready(function(){
 			});
 		});
 	});
-	$('a').click(function(ev){
+	$('a[rel="internal"]').each(function(idx,el){
+		$('<img src="/img/load.gif" class="load">').hide().appendTo(el);
+	}).click(function(ev){
 		ev.preventDefault();
 		History.pushState({page:this.href},null,this.href);
+		$(this).children(".load").fadeIn(200).delay(300).fadeOut(200);
 	});
 });

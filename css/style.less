@@ -274,6 +274,9 @@ body > header {
 			&:hover { color: #06e; }
 		}
 	}
+	img.load {
+		display: none;
+	}
 	nav {
 		border-top: 0px none;
 		background-color: rgba(255,255,255,0.3);
@@ -307,10 +310,6 @@ section[role="main"] {
 body > * {
 	max-width: 1140px;
 	margin: 0px auto;
-}
-
-img.load {
-	padding: 5px;
 }
 
 /* ==|== non-semantic helper classes ========================================
@@ -439,6 +438,11 @@ img.load {
 				}
 				&:hover { color: #06e; }
 			}
+		}
+
+		img.load {
+			display: inline;
+			padding: 0px 5px;
 		}
 		nav {
 			.columnp(4);
