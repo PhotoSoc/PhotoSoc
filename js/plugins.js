@@ -56,7 +56,7 @@ function renderer(path,args,layout) {
 	args = args || {};
 
 	if(path === "base") return that.emit("render",layout,args);
-	if(layout !== false) opts = {url:path,type:"options"};
+	if(layout !== false) opts = {url:"/ajax"+path};
 	$.ajax(opts).done(function(data,status,xhr) {
 		var comp, output = "";
 		Object.merge(args,JSON.parse(xhr.getResponseHeader(
