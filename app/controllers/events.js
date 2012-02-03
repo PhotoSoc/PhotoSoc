@@ -1,4 +1,4 @@
-const list = require("mvc/list.js"),
+const list = require("struct").mvc.list,
 models = list.models,
 controllers = list.controllers;
 
