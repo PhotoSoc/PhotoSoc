@@ -1,8 +1,8 @@
-const struct = require("struct"),
+const gusto = require("gusto"),
 fs = require("fs");
 
 var conf = JSON.parse(
 	fs.readFileSync("conf/app.conf")
 );
 
-struct.run(conf);
+gusto.run(conf);
