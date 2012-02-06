@@ -1,5 +1,5 @@
-const list = require("struct").mvc.list,
-      models = require("struct").mvc.models;
+const list = require("gusto").mvc.list,
+      models = require("gusto").mvc.models;
 
 exports.exec = model.define({
 	name: String,

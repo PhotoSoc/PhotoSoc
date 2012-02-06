@@ -1,4 +1,4 @@
-const list = require("struct").mvc.list,
+const list = require("gusto").mvc.list,
 models = list.models,
 controllers = list.controllers;
 
