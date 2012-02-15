@@ -10,7 +10,9 @@ module.exports = {
 		this.render();
 	},
 	"contact": function() {
-		var exec = ["Jeff","Matt","Mark"];
-		this.render({exec:exec});
+		this.render({
+			exec:["Jeff","Matt","Mark"],
+			hello: "world"
+		});
 	}
 };
