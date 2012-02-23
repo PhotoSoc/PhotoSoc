@@ -9,5 +9,3 @@ Running:
 ```
 node run.js
 ```
-
-Test3

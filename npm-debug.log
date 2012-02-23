@@ -1,0 +1,23 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/home/photosoc/bin/npm', 'redis' ]
+info using npm@1.1.0-alpha-2
+info using node@v0.6.3
+verbose config file /home/photosoc/.npmrc
+verbose config file /home/photosoc/etc/npmrc
+verbose config file /home/photosoc/lib/node_modules/npm/npmrc
+verbose umasking from 77 755
+ERR! Error: ENOENT, no such file or directory '/home/photosoc/lib/node_modules/npm/man/man1/'
+ERR! Report this *entire* log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Linux 2.6.32-5-amd64
+ERR! command "node" "/home/photosoc/bin/npm" "redis"
+ERR! cwd /home/photosoc/App
+ERR! node -v v0.6.3
+ERR! npm -v 1.1.0-alpha-2
+ERR! path /home/photosoc/lib/node_modules/npm/man/man1/
+ERR! code ENOENT
+ERR! message ENOENT, no such file or directory '/home/photosoc/lib/node_modules/npm/man/man1/'
+verbose exit [ 1, true ]
