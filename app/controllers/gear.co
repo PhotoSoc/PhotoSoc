@@ -1,0 +1,5 @@
+{Controller} = require "gusto/mvc/controller"
+
+class Gear extends Controller
+	index: ->
+		@render()

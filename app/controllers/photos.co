@@ -1,0 +1,29 @@
+{Controller} = require "gusto/mvc/controller"
+
+https = require \https
+Q = require \q
+
+class Photos extends Controller
+	index: ->
+		@render!
+	list: (promise)->
+		params <- promise.then!
+		start = new Date
+		path = "/services/rest/"
+		params =
+			method:"flickr.groups.pools.getPhotos"
+			api_key:"2827b151717a238f8d5d097099ba3cc7"
+			group_id:"696232@N23"
+			format:"json"
+			nojsoncallback:1
+
+		res <- Q.ncall http.get, http,
+			host: "api.flickr.com"
+			path: path+"?"+qs.stringify(params)
+		buf = ""
+		res.setEncoding "UTF8"
+		res.on "data",(chunk) ->
+			buf += chunk
+
+		pr <- Q.ncall res.on, res,"end"
+		action.renderJSON(JSON.parse buf .photos.photo

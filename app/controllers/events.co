@@ -1,0 +1,32 @@
+{Controller} = require "gusto/mvc/controller"
+
+https = require \https
+Q = require \q
+
+class Events extends Controller
+	index: (promise)->
+		params <- promise.then!
+		if params.id? then
+			@render "view" id:params.id
+		else @render params
+
+	list: (promise)->
+		params <- promise.then!
+		action = this
+		start = new Date
+		token = "?access_token=AAACPGOnKZAyMBAGSZCAYQRXXLe7dhxysHEofmZBNqeuNpXcjg5ZCGIpaleB5xBfKWFca7Djj6ZCcK9s3bvmKhabzZBicvatoUZD"
+		if params.id?
+			path = "/"+params.id
+		else
+			path = "/warwickphotosoc/events"
+		
+		res <- Q.ncall https.get, https, host: "graph.facebook.com", path: path+token .then
+		buf = new Buffer parseInt res.headers[\content-length]
+		off=0
+		res.on \data (chunk)->
+			chunk.copy buf,off
+			off += chunk.length
+
+		Q.ncall res.on,res .then ->
+			event = JSON.parse buf.toString \UTF-8
+			action.renderJSON event
