@@ -2,4 +2,4 @@
 
 class Gear extends Controller
 	index: ->
-		@render()
+		@render!

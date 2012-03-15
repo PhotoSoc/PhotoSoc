@@ -19,7 +19,7 @@ class Photos extends Controller
 
 		res <- Q.ncall http.get, http,
 			host: "api.flickr.com"
-			path: path+"?"+qs.stringify(params)
+			path: path+"?"+qs.stringify  params
 		buf = ""
 		res.setEncoding "UTF8"
 		res.on "data",(chunk) ->

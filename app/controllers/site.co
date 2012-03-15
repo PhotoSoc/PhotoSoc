@@ -8,6 +8,4 @@ class Site extends Controller
 		@render!
 
 	contact: ->
-		@render
-			exec:["Jeff","Matt","Mark"]
-			hello: "world"
+		@render exec:["Jeff","Matt","Mark"],hello: "world"
