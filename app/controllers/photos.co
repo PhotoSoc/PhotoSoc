@@ -26,4 +26,4 @@ class Photos extends Controller
 			buf += chunk
 
 		pr <- Q.ncall res.on, res,"end"
-		action.renderJSON(JSON.parse buf .photos.photo
+		action.renderJSON JSON.parse(buf).photos.photo
