@@ -2,7 +2,7 @@
 
 https = require \https
 Q = require \q
-
+exports.a = "b"
 class Photos extends Controller
 	index: ->
 		@render!
@@ -25,5 +25,5 @@ class Photos extends Controller
 		res.on "data",(chunk) ->
 			buf += chunk
 
-		pr <- Q.ncall res.on, res,"end"
-		action.renderJSON JSON.parse(buf).photos.photo
+		Q.ncall res.on, res,"end"
+		.then -> action.renderJSON JSON.parse(buf).photos.photo
