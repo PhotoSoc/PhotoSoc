@@ -1,0 +1,3 @@
+gusto = require \gusto
+gusto.loadConfig inconsequential: "things"
+gusto.run!

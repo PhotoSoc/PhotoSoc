@@ -1,4 +1,4 @@
-{Controller} = require "gusto/mvc/controller"
+{Controller} = require "gusto/lib/mvc/controller"
 
 class Site extends Controller
 	index: ->

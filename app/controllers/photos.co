@@ -1,8 +1,8 @@
-{Controller} = require "gusto/mvc/controller"
+{Controller} = require "gusto/lib/mvc/controller"
 
 https = require \https
 Q = require \q
-exports.a = "b"
+
 class Photos extends Controller
 	index: ->
 		@render!
