@@ -1,8 +1,9 @@
 {Controller} = require "gusto/lib/mvc/controller"
 
 class Site extends Controller
+	@id = "silly.id"
 	index: ->
-		@render!
+		@render test:"sdsldyldylmpw"
 
 	about: ->
 		@render!

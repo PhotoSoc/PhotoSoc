@@ -4,14 +4,12 @@ https = require \https
 Q = require \q
 
 class Events extends Controller
-	index: (promise)->
-		params <- promise.then!
+	index: (params)->
 		if params.id? then
 			@render "view" id:params.id
 		else @render params
 
-	list: (promise)->
-		params <- promise.then!
+	list: (params)->
 		action = this
 		start = new Date
 		token = "?access_token=AAACPGOnKZAyMBAGSZCAYQRXXLe7dhxysHEofmZBNqeuNpXcjg5ZCGIpaleB5xBfKWFca7Djj6ZCcK9s3bvmKhabzZBicvatoUZD"

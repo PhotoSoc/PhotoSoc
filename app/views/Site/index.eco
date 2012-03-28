@@ -1,0 +1,2 @@
+#{l.toUpperCase! for l of test}
+Hello! Eco.

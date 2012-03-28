@@ -6,8 +6,7 @@ Q = require \q
 class Photos extends Controller
 	index: ->
 		@render!
-	list: (promise)->
-		params <- promise.then!
+	list: (params)->
 		start = new Date
 		path = "/services/rest/"
 		params =
