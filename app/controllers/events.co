@@ -1,16 +1,15 @@
 {Controller} = require "gusto/lib/mvc/controller"
-
+{async} = require \gusto
 https = require \https
-Q = require \q
+Sync = require \sync
 
-class Events extends Controller
+class exports.Events extends Controller
 	index: (params)->
 		if params.id? then
 			@render "view" id:params.id
 		else @render params
 
-	list: (params)->
-		action = this
+	list: async (params)->
 		start = new Date
 		token = "?access_token=AAACPGOnKZAyMBAGSZCAYQRXXLe7dhxysHEofmZBNqeuNpXcjg5ZCGIpaleB5xBfKWFca7Djj6ZCcK9s3bvmKhabzZBicvatoUZD"
 		if params.id?
@@ -18,13 +17,15 @@ class Events extends Controller
 		else
 			path = "/warwickphotosoc/events"
 		
-		res <- Q.ncall https.get, https, host: "graph.facebook.com", path: path+token .then
+		res = https.get.sync https,
+			host: "graph.facebook.com",
+			path: path+token
 		buf = new Buffer parseInt res.headers[\content-length]
 		off=0
 		res.on \data (chunk)->
 			chunk.copy buf,off
 			off += chunk.length
 
-		Q.ncall res.on,res .then ->
-			event = JSON.parse buf.toString \UTF-8
-			action.renderJSON event
+		res.on.sync res, \end
+		event = JSON.parse buf.toString \UTF-8
+		@renderJSON event

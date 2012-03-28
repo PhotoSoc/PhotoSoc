@@ -1,12 +1,12 @@
 {Controller} = require "gusto/lib/mvc/controller"
+{async} = require \gusto
+http = require \http
+Sync = require \sync
 
-https = require \https
-Q = require \q
-
-class Photos extends Controller
+class exports.Photos extends Controller
 	index: ->
 		@render!
-	list: (params)->
+	list: async (params)->
 		start = new Date
 		path = "/services/rest/"
 		params =
@@ -16,13 +16,13 @@ class Photos extends Controller
 			format:"json"
 			nojsoncallback:1
 
-		res <- Q.ncall http.get, http,
+		res = http.get.sync http,
 			host: "api.flickr.com"
-			path: path+"?"+qs.stringify  params
+			path: path+"?"+qs.stringify params
 		buf = ""
 		res.setEncoding "UTF8"
 		res.on "data",(chunk) ->
 			buf += chunk
 
-		Q.ncall res.on, res,"end"
-		.then -> action.renderJSON JSON.parse(buf).photos.photo
+		res.on.sync res,"end"
+		@renderJSON JSON.parse(buf).photos.photo
